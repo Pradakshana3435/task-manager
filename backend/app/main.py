@@ -25,3 +25,4 @@ app.include_router(task_router)
 @app.get("/")
 def home():
     return {"message": "Task Manager API is running"}
+app = app
