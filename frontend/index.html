@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="auth-box">
+
+            <h1>Task Manager</h1>
+
+            <!-- LOGIN FORM -->
+
+            <div id="login-form">
+
+                <input
+                    type="text"
+                    id="login-identifier"
+                    placeholder="Username or Email"
+                >
+
+                <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Password"
+                >
+
+                <div class="password-toggle">
+
+                    <input
+                        type="checkbox"
+                        onclick="toggleLoginPassword()"
+                    >
+
+                    <label>
+                        Show Password
+                    </label>
+
+                </div>
+
+                <button onclick="loginUser()">
+                    Login
+                </button>
+
+                <p>
+                    <span onclick="forgotPassword()">
+                        Forgot Password?
+                    </span>
+                </p>
+
+                <p>
+                    New user?
+                    <span onclick="showRegister()">
+                        Register
+                    </span>
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER FORM -->
+
+            <div id="register-form" class="hidden">
+
+                <input
+                    type="text"
+                    id="register-identifier"
+                    placeholder="Username or Email"
+                >
+
+                <input
+                    type="password"
+                    id="register-password"
+                    placeholder="Password"
+                >
+
+                <div class="password-toggle">
+
+                    <input
+                        type="checkbox"
+                        onclick="toggleRegisterPassword()"
+                    >
+
+                    <label>
+                        Show Password
+                    </label>
+
+                </div>
+
+                <button onclick="registerUser()">
+                    Register
+                </button>
+
+                <p>
+                    Already have an account?
+                    <span onclick="showLogin()">
+                        Login
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TASK SECTION -->
+
+        <div class="task-box hidden" id="task-section">
+
+            <div class="top-bar">
+
+                <h2>Your Tasks</h2>
+
+                <button onclick="logoutUser()">
+                    Logout
+                </button>
+
+            </div>
+
+
+            <div class="task-inputs">
+
+                <input
+                    type="text"
+                    id="task-title"
+                    placeholder="Task title"
+                >
+
+                <input
+                    type="text"
+                    id="task-description"
+                    placeholder="Task description"
+                >
+
+                <button onclick="createTask()">
+                    Add Task
+                </button>
+
+            </div>
+
+
+            <div id="task-list"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="notification"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
